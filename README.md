@@ -1,0 +1,1 @@
+this is a simple python game for beginners to the code world. I hope all is able to code along and enjoy my little game.
