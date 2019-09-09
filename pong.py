@@ -1,9 +1,10 @@
 import turtle
+import os
 
 #window = wn
 wn = turtle.Screen()
 wn.title("Pong by: Map The Coder")
-wn.bgcolor("black")
+wn.bgcolor("purple")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 #a tracer stops the window from updating, therfore has to be manually updated. This allows me to speed up the game on command
@@ -33,8 +34,8 @@ paddle_b.goto(350, 0)
 # Ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("square")
-ball.color("white")
+ball.shape("circle")
+ball.color("black")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 2
@@ -95,11 +96,13 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        #this last line of code reverses the direction of the ball.
+        #this line of code reverses the direction of the ball.
+        os.system("afplay boing.wav&")
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+        os.system("afplay boing.wav&")
 
     if ball.xcor() > 390: 
         ball.goto(0, 0)
@@ -121,7 +124,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350)  and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
         ball.setx(340)
         ball.dx *= -1
+        os.system("afplay boing.wav&")
 
     if (ball.xcor() < -340 and ball.xcor() > -350)  and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() -40):
         ball.setx(-340)
         ball.dx *= -1
+        os.system("afplay boing.wav&")
