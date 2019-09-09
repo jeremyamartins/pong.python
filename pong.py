@@ -3,7 +3,7 @@ import os
 
 #window = wn
 wn = turtle.Screen()
-wn.title("Pong by: Map The Coder")
+wn.title("Developed by: Map The Coder")
 wn.bgcolor("purple")
 wn.setup(width=800, height=600)
 wn.tracer(0)
